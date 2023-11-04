@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        ProcessThrust();
+        ProcessRotation();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ProcessThrust()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("Thrusting");
+        }       
+    }
+
+    private void ProcessRotation()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            Debug.Log("Rotate left");
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("Rotate right");
+        }
     }
 }
