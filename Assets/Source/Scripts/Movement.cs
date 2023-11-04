@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private Rigidbody _rigidBodyOfRocket;
+
     private void Update()
     {
         ProcessThrust();
@@ -12,7 +14,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Thrusting");
+            _rigidBodyOfRocket.AddRelativeForce(Vector3.up);
         }       
     }
 
