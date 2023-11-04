@@ -293,8 +293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.61, y: 1.52, z: 10.8}
+  m_LocalRotation: {x: -0.0011778488, y: 0.98634183, z: -0.16455394, w: -0.007102619}
+  m_LocalPosition: {x: 0.11365578, y: 9.388765, z: 15.795668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -383,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidBodyOfRocket: {fileID: 2047326125}
   _mainTrustPower: 1000
+  _rotationTrustPower: 100
 --- !u!54 &2047326125
 Rigidbody:
   m_ObjectHideFlags: 0

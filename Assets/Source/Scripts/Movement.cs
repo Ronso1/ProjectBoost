@@ -3,7 +3,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBodyOfRocket;
-    [SerializeField] private float _mainTrustPower;
+    [SerializeField] private float _mainTrustPower = 1000f;
+    [SerializeField] private float _rotationTrustPower = 100f;
 
     private void Update()
     {
@@ -23,11 +24,16 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log("Rotate left");
+            ApplyRotation(_rotationTrustPower);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("Rotate right");
+            ApplyRotation(-_rotationTrustPower);
         }
+    }
+
+    private void ApplyRotation(float rotationThisFrame)
+    {
+        transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
     }
 }
