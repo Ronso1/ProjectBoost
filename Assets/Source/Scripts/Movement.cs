@@ -3,6 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBodyOfRocket;
+    [SerializeField] private float _mainTrustPower;
 
     private void Update()
     {
@@ -14,7 +15,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            _rigidBodyOfRocket.AddRelativeForce(Vector3.up);
+            _rigidBodyOfRocket.AddRelativeForce(Vector3.up * _mainTrustPower * Time.deltaTime);
         }       
     }
 

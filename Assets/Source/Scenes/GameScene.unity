@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBodyOfRocket: {fileID: 2047326125}
+  _mainTrustPower: 1000
 --- !u!54 &2047326125
 Rigidbody:
   m_ObjectHideFlags: 0
