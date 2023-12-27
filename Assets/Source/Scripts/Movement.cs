@@ -34,6 +34,8 @@ public class Movement : MonoBehaviour
 
     private void ApplyRotation(float rotationThisFrame)
     {
+        _rigidBodyOfRocket.freezeRotation = true; //freezing rotation so we can manually rotate
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+        _rigidBodyOfRocket.freezeRotation = false; //unfreezing rotation so the physics system can take over
     }
 }
