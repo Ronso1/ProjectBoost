@@ -3,6 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBodyOfRocket;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private float _mainTrustPower = 1000f;
     [SerializeField] private float _rotationTrustPower = 100f;
 
@@ -17,7 +18,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             _rigidBodyOfRocket.AddRelativeForce(Vector3.up * _mainTrustPower * Time.deltaTime);
-        }       
+            if (_audioSource.isPlaying is false)
+            {
+                _audioSource.Play();
+            }
+        }
+        else if (_audioSource.isPlaying)
+        {
+            _audioSource.Stop();
+        }
     }
 
     private void ProcessRotation()
