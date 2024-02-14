@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] private float _levelDelayTime = 2f;
+
     private void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -14,12 +16,24 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("You take a fuel!");
                 break;
             case "Finish":
-                LoadLevel();
+                StartLoadingNextScene();
                 break;
             default:
-                ReloadScene();
+                StartCrashSequence();
                 break;
         }
+    }
+
+    private void StartCrashSequence()
+    {
+        gameObject.GetComponent<Movement>().enabled = false;
+        Invoke("ReloadScene", 1f);
+    }
+
+    private void StartLoadingNextScene()
+    {
+        gameObject.GetComponent<Movement>().enabled = false;
+        Invoke("LoadLevel", _levelDelayTime);
     }
 
     private void ReloadScene()
