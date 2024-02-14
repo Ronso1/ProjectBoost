@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -16,8 +17,14 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("You completed level!");
                 break;
             default:
-                Debug.Log("You blew up! Game over");
+                ReloadScene();
                 break;
         }
+    }
+
+    private void ReloadScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
