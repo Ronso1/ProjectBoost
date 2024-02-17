@@ -4,6 +4,8 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBodyOfRocket;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _thrustEngineClip;
+    [Space]
     [SerializeField] private float _mainTrustPower = 1000f;
     [SerializeField] private float _rotationTrustPower = 100f;
 
@@ -20,7 +22,7 @@ public class Movement : MonoBehaviour
             _rigidBodyOfRocket.AddRelativeForce(Vector3.up * _mainTrustPower * Time.deltaTime);
             if (_audioSource.isPlaying is false)
             {
-                _audioSource.Play();
+                _audioSource.PlayOneShot(_thrustEngineClip);
             }
         }
         else if (_audioSource.isPlaying)

@@ -416,10 +416,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 5580664325734380767, guid: 99bd23bac96f6864aa294c502fb6249e, type: 3}
-      propertyPath: _levelDelayTime
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 99bd23bac96f6864aa294c502fb6249e, type: 3}

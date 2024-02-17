@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] private AudioSource _playerAudioSource;
+    [SerializeField] private AudioClip _crashClip;
+    [SerializeField] private AudioClip _winClip;
+    [Space]
     [SerializeField] private float _levelDelayTime = 2f;
 
     private void OnCollisionEnter(Collision collision)
@@ -16,9 +20,11 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("You take a fuel!");
                 break;
             case "Finish":
+                PlayAudioClip(_winClip);
                 StartLoadingNextScene();
                 break;
             default:
+                PlayAudioClip(_crashClip);
                 StartCrashSequence();
                 break;
         }
@@ -53,5 +59,10 @@ public class CollisionHandler : MonoBehaviour
         }
 
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    private void PlayAudioClip(AudioClip clip)
+    {
+        _playerAudioSource.PlayOneShot(clip);
     }
 }

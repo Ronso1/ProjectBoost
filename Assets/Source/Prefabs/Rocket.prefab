@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidBodyOfRocket: {fileID: 2047326125}
   _audioSource: {fileID: 5580664325734380766}
+  _thrustEngineClip: {fileID: 8300000, guid: 077f4bea918bb7348a0cbeed0c55bbc5, type: 3}
   _mainTrustPower: 1000
   _rotationTrustPower: 100
 --- !u!82 &5580664325734380766
@@ -241,3 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccbe52cb141f764d85e2c0e87e1e37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAudioSource: {fileID: 5580664325734380766}
+  _crashClip: {fileID: 8300000, guid: 1e35acdb19becaa49b28a791fb3d06ff, type: 3}
+  _winClip: {fileID: 8300000, guid: bf78197fe0d3e0e48a3c1d8a85daacad, type: 3}
+  _levelDelayTime: 2
