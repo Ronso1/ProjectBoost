@@ -9,8 +9,15 @@ public class CollisionHandler : MonoBehaviour
     [Space]
     [SerializeField] private float _levelDelayTime = 2f;
 
+    private bool _isTransitioning = false;
+
     private void OnCollisionEnter(Collision collision)
     {
+        if (_isTransitioning)
+        {
+            return;
+        }
+
         switch (collision.gameObject.tag)
         {
             case "Friendly":
@@ -63,6 +70,8 @@ public class CollisionHandler : MonoBehaviour
 
     private void PlayAudioClip(AudioClip clip)
     {
+        _playerAudioSource.Stop();
         _playerAudioSource.PlayOneShot(clip);
+        _isTransitioning = true;
     }
 }
