@@ -6,6 +6,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private AudioSource _playerAudioSource;
     [SerializeField] private AudioClip _crashClip;
     [SerializeField] private AudioClip _winClip;
+    [SerializeField] private ParticleSystem _crashParticle;
+    [SerializeField] private ParticleSystem _winParticle;
     [Space]
     [SerializeField] private float _levelDelayTime = 2f;
 
@@ -28,10 +30,12 @@ public class CollisionHandler : MonoBehaviour
                 break;
             case "Finish":
                 PlayAudioClip(_winClip);
+                _winParticle.Play();
                 StartLoadingNextScene();
                 break;
             default:
                 PlayAudioClip(_crashClip);
+                _crashParticle.Play();
                 StartCrashSequence();
                 break;
         }
