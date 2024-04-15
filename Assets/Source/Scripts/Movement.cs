@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             _rigidBodyOfRocket.AddRelativeForce(Vector3.up * _mainTrustPower * Time.deltaTime);
+
             if (_audioSource.isPlaying is false)
             {
                 _audioSource.PlayOneShot(_thrustEngineClip);
