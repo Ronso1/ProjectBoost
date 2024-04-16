@@ -246,6 +246,7 @@ MonoBehaviour:
   _leftSideEngineParticle: {fileID: 3464887726985530255}
   _rightSideEngineParticle: {fileID: 3464887728378559520}
   _middleSideEngineParticle: {fileID: 3464887727687346030}
+  _rocketCollider: {fileID: 1824912030605288315}
   _mainTrustPower: 1000
   _rotationTrustPower: 100
 --- !u!114 &1824912030605288197

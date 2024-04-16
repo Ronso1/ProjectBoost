@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        LoadNextScene();
     }
 
     private void ProcessThrust()
@@ -97,6 +99,20 @@ public class Movement : MonoBehaviour
         if (particle.isPlaying is false)
         {
             particle.Play();
+        }
+    }
+
+    private void LoadNextScene()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            int indexOfScene = SceneManager.GetActiveScene().buildIndex;
+
+            if (indexOfScene == 1)
+            {
+                indexOfScene = -1;
+            }
+            SceneManager.LoadScene(indexOfScene + 1);
         }
     }
 }

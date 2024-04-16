@@ -12,10 +12,24 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private float _levelDelayTime = 2f;
 
     private bool _isTransitioning = false;
+    private bool _collisionDisabled;
+
+    private void Update()
+    {
+        ChangeStateOfCollision();
+    }
+
+    private void ChangeStateOfCollision()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            _collisionDisabled = !_collisionDisabled;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isTransitioning)
+        if (_isTransitioning || _collisionDisabled)
         {
             return;
         }
