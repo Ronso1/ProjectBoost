@@ -23,18 +23,28 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            _rigidBodyOfRocket.AddRelativeForce(Vector3.up * _mainTrustPower * Time.deltaTime);          
-
-            if (_audioSource.isPlaying is false)
-            {
-                _audioSource.PlayOneShot(_thrustEngineClip);
-                _mainEngineParticle.Play();
-            }
+            StartThrusting();
         }
         else if (_audioSource.isPlaying)
         {
-            _audioSource.Stop();
-            _mainEngineParticle.Stop();
+            StopThrusting();
+        }
+    }
+
+    private void StopThrusting()
+    {
+        _audioSource.Stop();
+        _mainEngineParticle.Stop();
+    }
+
+    private void StartThrusting()
+    {
+        _rigidBodyOfRocket.AddRelativeForce(Vector3.up * _mainTrustPower * Time.deltaTime);
+
+        if (_audioSource.isPlaying is false)
+        {
+            _audioSource.PlayOneShot(_thrustEngineClip);
+            _mainEngineParticle.Play();
         }
     }
 
@@ -42,22 +52,37 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(_rotationTrustPower);
-            StartParticlePlay(_leftSideEngineParticle);
-            StartParticlePlay(_middleSideEngineParticle);         
+            RotatingLeft();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(-_rotationTrustPower);
-            StartParticlePlay(_rightSideEngineParticle);
-            StartParticlePlay(_middleSideEngineParticle);           
+            RotatingRight();
         }
         else
         {
-            _leftSideEngineParticle.Stop();
-            _rightSideEngineParticle.Stop();
-            _middleSideEngineParticle.Stop();
-        }    
+            StopRotating();
+        }
+    }
+
+    private void RotatingRight()
+    {
+        ApplyRotation(-_rotationTrustPower);
+        StartParticlePlay(_rightSideEngineParticle);
+        StartParticlePlay(_middleSideEngineParticle);
+    }
+
+    private void RotatingLeft()
+    {
+        ApplyRotation(_rotationTrustPower);
+        StartParticlePlay(_leftSideEngineParticle);
+        StartParticlePlay(_middleSideEngineParticle);
+    }
+
+    private void StopRotating()
+    {
+        _leftSideEngineParticle.Stop();
+        _rightSideEngineParticle.Stop();
+        _middleSideEngineParticle.Stop();
     }
 
     private void ApplyRotation(float rotationThisFrame)
