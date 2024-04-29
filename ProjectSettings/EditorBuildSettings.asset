@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Source/Scenes/Low ton.unity
     guid: faebaccb802e5534885f48438974b796
+  - enabled: 1
+    path: Assets/Source/Scenes/Only up.unity
+    guid: 20302effa1049384486996b3f4be6a81
   m_configObjects: {}

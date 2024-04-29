@@ -108,7 +108,7 @@ public class Movement : MonoBehaviour
         {
             int indexOfScene = SceneManager.GetActiveScene().buildIndex;
 
-            if (indexOfScene == 1)
+            if (indexOfScene == 3)
             {
                 indexOfScene = -1;
             }
