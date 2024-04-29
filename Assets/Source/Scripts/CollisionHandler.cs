@@ -37,10 +37,6 @@ public class CollisionHandler : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("You touch friendly object");
-                break;
-            case "Fuel":
-                Debug.Log("You take a fuel!");
                 break;
             case "Finish":
                 PlayAudioClip(_winClip);
