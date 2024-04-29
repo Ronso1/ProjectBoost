@@ -144,8 +144,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 077f4bea918bb7348a0cbeed0c55bbc5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.769
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidBodyOfRocket: {fileID: 1824912030605288314}
   _audioSource: {fileID: 1824912030605288196}
-  _thrustEngineClip: {fileID: 8300000, guid: 077f4bea918bb7348a0cbeed0c55bbc5, type: 3}
+  _thrustEngineClip: {fileID: 8300000, guid: bf854b089b1446c4c8a2705119ee5d67, type: 3}
   _mainEngineParticle: {fileID: 4230912611802650727}
   _leftSideEngineParticle: {fileID: 3464887726985530255}
   _rightSideEngineParticle: {fileID: 3464887728378559520}
