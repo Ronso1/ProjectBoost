@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Source/Scenes/Bridge.unity
     guid: d298eddd88a015148861c8f3ed4069f2
+  - enabled: 1
+    path: Assets/Source/Scenes/Low ton.unity
+    guid: faebaccb802e5534885f48438974b796
   m_configObjects: {}
