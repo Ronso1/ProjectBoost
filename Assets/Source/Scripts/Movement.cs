@@ -54,11 +54,13 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            RotatingLeft();
+            //RotatingLeft();
+            RotatingRight();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            RotatingRight();
+            //RotatingRight();
+            RotatingLeft();
         }
         else
         {
@@ -108,7 +110,7 @@ public class Movement : MonoBehaviour
         {
             int indexOfScene = SceneManager.GetActiveScene().buildIndex;
 
-            if (indexOfScene == 3)
+            if (indexOfScene == SceneManager.sceneCountInBuildSettings - 1)
             {
                 indexOfScene = -1;
             }

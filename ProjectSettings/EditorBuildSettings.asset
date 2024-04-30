@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Source/Scenes/Bridge.unity
     guid: d298eddd88a015148861c8f3ed4069f2
   - enabled: 1
+    path: Assets/Source/Scenes/Under mystery.unity
+    guid: fe76c1a858a24c9409918b7328f6d32a
+  - enabled: 1
     path: Assets/Source/Scenes/Low ton.unity
     guid: faebaccb802e5534885f48438974b796
   - enabled: 1
     path: Assets/Source/Scenes/Only up.unity
     guid: 20302effa1049384486996b3f4be6a81
+  - enabled: 1
+    path: Assets/Source/Scenes/Difficult way.unity
+    guid: 4fedd04955b53074aadc9baf19961580
   m_configObjects: {}
