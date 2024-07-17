@@ -19,14 +19,14 @@ public class PlayerMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && _menuActive == false)
+        if (Input.GetKeyDown(KeyCode.Tab) && _menuActive == false)
         {
             _menuActive = true;
             _playerAudioSource.Pause();
             Time.timeScale = 0f;
             _playerMenu.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && _menuActive)
+        else if (Input.GetKeyDown(KeyCode.Tab) && _menuActive)
         {
             _menuActive = false;
             _playerAudioSource.Play();
